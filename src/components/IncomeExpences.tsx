@@ -2,9 +2,9 @@ import React,{useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
 export const IncomeExpences = () => {
-    const {transcations} = useContext(GlobalContext);
+    const {transactions} = useContext(GlobalContext);
 
-    const amounts = transcations.map(transaction => transaction.amount);
+    const amounts = transactions.map(transaction => transaction.amount);
 
   const income = amounts
     .filter(item => item > 0)

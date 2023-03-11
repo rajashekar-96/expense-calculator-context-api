@@ -2,15 +2,15 @@ import React, {useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 export const TranscationList = () => {
-    const {transcations} = useContext(GlobalContext);
-    const sign = transcations.map(transcation => transcation.amount < 0 ? '-' : '+')
+    const {transactions} = useContext(GlobalContext);
+    const sign = transactions.map(transaction => transaction.amount < 0 ? '-' : '+')
   return (
     <div>
         <h3>History</h3>
     <ul className="list">
-        {transcations.map((transcation,index) => (
-            <li className={transcation.amount > 0 ? "plus": "minus"}>
-            {transcation.text} <span>{sign[index]}${Math.abs(transcation.amount)}</span><button className="delete-btn">x</button>
+        {transactions.map((transaction,index) => (
+            <li className={transaction.amount > 0 ? "plus": "minus"}>
+            {transaction.text} <span>{sign[index]}${Math.abs(transaction.amount)}</span><button className="delete-btn">x</button>
           </li> 
         ))}
        

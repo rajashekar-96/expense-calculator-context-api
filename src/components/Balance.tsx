@@ -4,8 +4,8 @@ import { GlobalContext } from '../context/GlobalState';
 
 export const Balance = () => {
 
-    const {transcations} = useContext(GlobalContext);
-    const amount = transcations.map(transcation => transcation.amount);
+    const {transactions} = useContext(GlobalContext);
+    const amount = transactions.map(transaction => transaction.amount);
     const totol = amount.reduce((acc, item) => (acc += item),0);
     
   return (
